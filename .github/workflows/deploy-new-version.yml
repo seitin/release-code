@@ -41,6 +41,7 @@ jobs:
       - name: create version file
         run: |
           echo $(git --version)
+          git config --global --add safe.directory /__w/release-code/release-code
           npm run release -c .release-it.json --ci --release-version > .version
 
       # # Runs a single command using the runners shell
