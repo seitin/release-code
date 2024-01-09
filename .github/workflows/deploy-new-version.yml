@@ -42,6 +42,9 @@ jobs:
         run: |
           echo $(git --version)
           git config --global --add safe.directory /__w/release-code/release-code
+          git config --global user.email "flavia.taho@grupoboticario.com.br"
+          git config --global user.name "Célula de Ativação"
+
           npm run release -c .release-it.json --ci --release-version > .version
 
       # # Runs a single command using the runners shell
