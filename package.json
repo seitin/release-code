@@ -4,11 +4,15 @@
   "description": "Tests for release it",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Tested!\""
+    "test": "echo \"Tested!\"",
+    "release": "release-it"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "loadash": "^1.0.0"
+  },
+  "devDependencies": {
+    "release-it": "^17.0.1"
   }
 }
