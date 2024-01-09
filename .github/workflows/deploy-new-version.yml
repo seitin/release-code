@@ -21,4 +21,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run release it
         run: |
-          npx release-it
+          npm run release
