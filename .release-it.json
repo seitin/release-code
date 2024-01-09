@@ -1,0 +1,40 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "commitMessage": "chore: release v${version}"
+  },
+  "github": {
+    "release": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "section": "✨ Features",
+            "type": "feature"
+          },
+          {
+            "section": "🐛 Bugfixes",
+            "type": "fix"
+          },
+          {
+            "section": "📚 Documentation",
+            "type": "doc"
+          },
+          {
+            "section": "🔥 Refactor",
+            "type": "refactor"
+          },
+          {
+            "section": "🔖 Chore",
+            "type": "chore"
+          }
+        ]
+      }
+    }
+  }
+}
