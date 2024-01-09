@@ -19,6 +19,16 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
+      - name: npm install
+        run: |
+          npm ci
+
+      # Runs a single command using the runners shell
+      - name: create new branch
+        run: |
+          npm run release -c .release-it.json --ci
+
+      # Runs a single command using the runners shell
       - name: Run release it
         run: |
-          npm run release
+          npm run release -c .release-it.json --ci
