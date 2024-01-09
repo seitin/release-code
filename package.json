@@ -13,6 +13,7 @@
     "loadash": "^1.0.0"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
     "release-it": "^17.0.1"
   }
 }
