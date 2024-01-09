@@ -45,7 +45,7 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
-          npm run release:version > .version
+          npm run release:version | tail -n 1 > .version
 
       # # Runs a single command using the runners shell
       # - name: Run release it
