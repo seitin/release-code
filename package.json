@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Tested!\"",
-    "release": "release-it"
+    "release:version": "release-it -c .release-it.json --ci --release-version"
   },
   "author": "",
   "license": "ISC",
