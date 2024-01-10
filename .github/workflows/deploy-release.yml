@@ -5,8 +5,7 @@ name: Deploy to prod
 
 on:
   push:
-    branches:
-      - "release"
+    branches: [ "release" ]
 jobs:
   build:
     # if: github.event.pull_request.merged == true
