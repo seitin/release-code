@@ -48,7 +48,10 @@ jobs:
           npm run release:version | tail -n 1 > .version
           echo "deploying new version [$(cat .version)]"
 
-          git checkout -b releases/$(cat .version)
+          BRANCH_NAME="releases/$(cat .version)"
+
+          git checkout -b $BRANCH_NAME
+          git push origin $BRANCH_NAME
 
       # # Runs a single command using the runners shell
       # - name: Run release it
