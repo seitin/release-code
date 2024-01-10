@@ -41,11 +41,11 @@ jobs:
       - name: create version file
         run: |
           echo $(git --version)
+          echo ${{ github.token }} >> ".ghtoken"
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
-          git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          echo ${{ github.token }} >> ".ghtoken"
+          git remote set-url origin https://${GITHUB_ACTOR}:$(cat .ghtoken)@github.com/${GITHUB_REPOSITORY}.git
           echo "actor: $GITHUB_ACTOR"
           echo "token: $GITHUB_TOKEN"
           echo "token2: $(cat .ghtoken)"
