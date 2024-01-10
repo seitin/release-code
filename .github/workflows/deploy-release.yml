@@ -9,7 +9,7 @@ on:
       - "releases/*"
   pull_request:
     type:
-      - opened
+      - closed
     branches:
       - "releases/*"
 
