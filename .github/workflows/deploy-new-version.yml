@@ -34,12 +34,12 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
-          npm run release
-          # echo "deploying new version [$(cat .version)]"
+          npm run release:version | tail -n 1 > .version
+          echo "deploying new version [$(cat .version)]"
 
-          # node -e "const package = require('./package.json'); package.version = '$(cat .version)'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 4))"
+          node -e "const package = require('./package.json'); package.version = '$(cat .version)'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 4))"
 
-          # git add package.json
+          git add package.json
           # git commit -m "Bump version"
           # NEW_CONF_VERSION="release_branch=releases/$(cat .version)"
           # echo $NEW_CONF_VERSION >> $GITHUB_ENV
@@ -47,6 +47,8 @@ jobs:
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
         with:
+          commit-message: "chore: bump new version"
+          branch: bump/${{ env.release_branch }}
           add-paths: |
             package.json
       # - name: create release branch
