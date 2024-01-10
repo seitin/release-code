@@ -41,7 +41,6 @@ jobs:
       - name: create version file
         run: |
           echo $(git --version)
-          echo ${{ github.token }} >> ".ghtoken"
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
