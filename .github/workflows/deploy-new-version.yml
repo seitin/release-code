@@ -54,7 +54,7 @@ jobs:
           echo "deploying new version [$(cat .version)]"
 
           NEW_CONF_VERSION="release_branch=releases/$(cat .version)"
-          echo NEW_CONF_VERSION >> $GITHUB_ENV
+          echo $NEW_CONF_VERSION >> $GITHUB_ENV
 
           # git checkout -b $BRANCH_NAME
           # git push origin $BRANCH_NAME
