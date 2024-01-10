@@ -1,20 +1,20 @@
 {
-  "name": "release-code",
-  "version": "1.4.1",
-  "description": "Tests for release it",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Tested!\"",
-    "release:version": "release-it -c .release-it.json --ci --release-version",
-    "release": "release-it -c .release-it.json --ci"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "loadash": "^1.0.0"
-  },
-  "devDependencies": {
-    "@release-it/conventional-changelog": "^8.0.1",
-    "release-it": "^17.0.1"
-  }
+    "name": "release-code",
+    "version": "Resetting local changes made",
+    "description": "Tests for release it",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Tested!\"",
+        "release:version": "release-it -c .release-it.json --ci --release-version",
+        "release": "release-it -c .release-it.json --ci"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "loadash": "^1.0.0"
+    },
+    "devDependencies": {
+        "@release-it/conventional-changelog": "^8.0.1",
+        "release-it": "^17.0.1"
+    }
 }
