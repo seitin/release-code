@@ -46,6 +46,7 @@ jobs:
           git config --global user.name "Célula de Ativação"
 
           npm run release:version | tail -n 1 > .version
+          echo "deploying new version [$(cat .version)]"
 
           git checkout -b releases/$(cat .version)
 
