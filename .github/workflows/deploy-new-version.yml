@@ -44,6 +44,7 @@ jobs:
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
 
           npm run release:version | tail -n 1 > .version
           echo "deploying new version [$(cat .version)]"
