@@ -2,7 +2,10 @@
 
 name: Create PR for new release
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -39,7 +42,7 @@ jobs:
 
           node -e "const package = require('./package.json'); package.version = '$(cat .version)'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
 
-
+          git merge main
           git add package.json
           git commit -m "Bump version"
 
