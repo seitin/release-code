@@ -46,7 +46,10 @@ jobs:
           git add package.json
           git commit -m "Bump version"
 
-          NEW_CONF_VERSION="release_branch=bump/$(cat .version)"
+          VERSION=$(cat .version)
+          git tag -a $VERSION -m "added version $VERSION"
+
+          NEW_CONF_VERSION="release_branch=bump/$VERSION"
           echo $NEW_CONF_VERSION >> $GITHUB_ENV
 
       - name: create version pull request
