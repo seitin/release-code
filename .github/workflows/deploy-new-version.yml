@@ -47,10 +47,16 @@ jobs:
           git commit -m "Bump version"
 
           VERSION=$(cat .version)
-          git tag -a $VERSION -m "added version $VERSION"
-
           NEW_CONF_VERSION="release_branch=bump/$VERSION"
+          echo "version=$VERSION" >> $GITHUB_ENV
           echo $NEW_CONF_VERSION >> $GITHUB_ENV
+      
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.version }}
+          name: Release ${{ env.version }}
+
 
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
