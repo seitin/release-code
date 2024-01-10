@@ -45,10 +45,6 @@ jobs:
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
-          # git remote set-url origin https://${GITHUB_ACTOR}:$(cat .ghtoken)@github.com/${GITHUB_REPOSITORY}.git
-          # echo "actor: $GITHUB_ACTOR"
-          # echo "token: $GITHUB_TOKEN"
-          # echo "token2: $(cat .ghtoken)"
 
           npm run release:version | tail -n 1 > .version
           echo "deploying new version [$(cat .version)]"
@@ -56,13 +52,10 @@ jobs:
           NEW_CONF_VERSION="release_branch=releases/$(cat .version)"
           echo $NEW_CONF_VERSION >> $GITHUB_ENV
 
-          # git checkout -b $BRANCH_NAME
-          # git push origin $BRANCH_NAME
-
       - name: create release branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: env.release_branch
+          branch: ${{ env.release_branch }}
           sha: '${{ github.event.pull_request.head.sha }}'
