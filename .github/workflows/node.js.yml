@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-      - release/*
+      - release
     paths-ignore:
       - '**/*.md'
       - '.scafflater/**'
@@ -13,7 +13,7 @@ on:
       - reopened
     branches:
       - main
-      - release/*
+      - release
     paths-ignore:
       - "**/*.md"
   create:
