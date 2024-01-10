@@ -40,9 +40,9 @@ jobs:
           node -e "const package = require('./package.json'); package.version = '$(cat .version)'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 4))"
 
           git add package.json
-          # git commit -m "Bump version"
-          # NEW_CONF_VERSION="release_branch=releases/$(cat .version)"
-          # echo $NEW_CONF_VERSION >> $GITHUB_ENV
+          git commit -m "Bump version"
+          NEW_CONF_VERSION="release_branch=releases/$(cat .version)"
+          echo $NEW_CONF_VERSION >> $GITHUB_ENV
 
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
