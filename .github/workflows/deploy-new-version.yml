@@ -47,6 +47,8 @@ jobs:
 
           npm run release:version | tail -n 1 > .version
 
+          git checkout -b releases/$(cat .version)
+
       # # Runs a single command using the runners shell
       # - name: Run release it
       #   run: |
