@@ -4,15 +4,9 @@
 name: Deploy to prod
 
 on:
-  create:
+  push:
     branches:
-      - "releases/*"
-  pull_request:
-    type:
-      - closed
-    branches:
-      - "releases/*"
-
+      - "release"
 jobs:
   build:
     # if: github.event.pull_request.merged == true
