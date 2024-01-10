@@ -49,7 +49,8 @@ jobs:
         with:
           commit-message: "chore: bump new version"
           title: "Bump version to release [${{ env.release_branch }}]"
-          branch: bump/${{ env.release_branch }}
+          body: "Pull request created automatically for versioning"
+          branch: ${{ env.release_branch }}
           add-paths: |
             package.json
       # - name: create release branch
