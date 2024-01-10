@@ -45,6 +45,8 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
           git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          echo "actor: $GITHUB_ACTOR"
+          echo "token: $GITHUB_TOKEN"
 
           npm run release:version | tail -n 1 > .version
           echo "deploying new version [$(cat .version)]"
