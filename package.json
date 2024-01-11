@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Tested!\"",
     "release:version": "release-it -c .release-it.json --ci --release-version",
+    "release:changelog": "release-it -c .release-it.json --ci --changelog",
     "release": "release-it -c .release-it.json --ci"
   },
   "author": "",
