@@ -39,7 +39,7 @@ jobs:
       - name: create version file and update package.json version
         run: |
           echo "creating commit for package.json..."
-          VERSION=npm run release:version | tail -n 1
+          VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
           node -e "const package = require('./package.json'); package.version = '$VERSION'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
 
