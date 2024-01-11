@@ -47,19 +47,19 @@ jobs:
           npm run release:changelog > .changelog
           echo $(cat .changelog)
 
-      - name: update package.json version 
-        run: |
-          node -e "const package = require('./package.json'); package.version = '$VERSION'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
-
-          git add package.json
-          git commit -m "Bump version $VERSION"
-
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
           bodyFile: .changelog
+
+      - name: update package.json version 
+        run: |
+          node -e "const package = require('./package.json'); package.version = '$VERSION'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
+
+          git add package.json
+          git commit -m "Bump version $VERSION"
 
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
