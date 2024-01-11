@@ -19,6 +19,10 @@
             "type": "feat"
           },
           {
+            "section": "✨ Features [Breaking changes]",
+            "type": "feat!"
+          },
+          {
             "section": "🐛 Bugfixes",
             "type": "fix"
           },
