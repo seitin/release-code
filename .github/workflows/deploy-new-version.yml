@@ -35,6 +35,10 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
+      - name: create changelog file
+        run: |
+          npm run release:changelog > .changelog
+
       # Runs a single command using the runners shell
       - name: create version file and update package.json version
         run: |
@@ -45,10 +49,6 @@ jobs:
 
           git add package.json
           git commit -m "Bump version $VERSION"
-
-      - name: create changelog file
-        run: |
-          npm run release:changelog > .changelog
       
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
