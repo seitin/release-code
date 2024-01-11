@@ -38,12 +38,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: generate version number and changelog file
         run: |
+          npm run release:changelog > .changelog
+          echo $(cat .changelog)
+
           echo "creating commit for package.json..."
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
-
-          npm run release:changelog > .changelog
-          echo $(cat .changelog)
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
