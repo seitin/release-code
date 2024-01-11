@@ -29,31 +29,26 @@ jobs:
         run: |
           npm ci
 
-      # Runs a single command using the runners shell
-      - name: create version file
+      - name: git config
         run: |
-          echo $(git --version)
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
-          npm run release:version | tail -n 1 > .version
-          echo "deploying new version [$(cat .version)]"
-
-          node -e "const package = require('./package.json'); package.version = '$(cat .version)'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
-
-          git merge main
-          git add package.json
-          git commit -m "Bump version"
-
-          VERSION=$(cat .version)
-          NEW_CONF_VERSION="release_branch=bump/$VERSION"
-
+      # Runs a single command using the runners shell
+      - name: create version file and update package.json version
+        run: |
+          echo "creating commit for package.json..."
+          VERSION=npm run release:version | tail -n 1
           echo "version=$VERSION" >> $GITHUB_ENV
-          echo $NEW_CONF_VERSION >> $GITHUB_ENV
+          node -e "const package = require('./package.json'); package.version = '$VERSION'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
 
+          git add package.json
+          git commit -m "Bump version $VERSION"
+
+      - name: create changelog file
+        run: |
           npm run release:changelog > .changelog
-          # echo "changelog='$(cat .changelog)'" >> $GITHUB_ENV
       
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
@@ -68,14 +63,7 @@ jobs:
           commit-message: "chore: bump new version"
           title: "Bump version to release [${{ env.release_branch }}]"
           body: "Pull request created automatically for versioning"
-          branch: ${{ env.release_branch }}
+          branch: bump/${{ env.version }}
           delete-branch: true
           add-paths: |
             package.json
-      # - name: create release branch
-      #   uses: peterjgrainger/action-create-branch@v2.2.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     branch: ${{ env.release_branch }}
-      #     sha: '${{ github.event.pull_request.head.sha }}'
