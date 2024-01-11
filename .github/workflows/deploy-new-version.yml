@@ -57,7 +57,6 @@ jobs:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
 
-
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
         with:
@@ -65,6 +64,7 @@ jobs:
           title: "Bump version to release [${{ env.release_branch }}]"
           body: "Pull request created automatically for versioning"
           branch: ${{ env.release_branch }}
+          delete-branch: true
           add-paths: |
             package.json
       # - name: create release branch
