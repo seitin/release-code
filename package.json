@@ -1,6 +1,6 @@
 {
   "name": "release-code",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "description": "Tests for release it",
   "main": "index.js",
   "scripts": {
