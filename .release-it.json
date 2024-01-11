@@ -1,6 +1,7 @@
 {
   "npm": {
-    "publish": false
+    "publish": false,
+    "requireBranch": ["main"]
   },
   "git": {
     "commitMessage": "chore: release v${version}"
