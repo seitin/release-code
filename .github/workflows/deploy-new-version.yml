@@ -48,14 +48,19 @@ jobs:
 
           VERSION=$(cat .version)
           NEW_CONF_VERSION="release_branch=bump/$VERSION"
+
           echo "version=$VERSION" >> $GITHUB_ENV
           echo $NEW_CONF_VERSION >> $GITHUB_ENV
+
+          npm run release:changelog > .changelog
+          echo "changelog='$(cat .changelog)'" >> $GITHUB_ENV
       
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
+          body: ${{ env.changelog }}
 
       - name: create version pull request
         uses: peter-evans/create-pull-request@v5
