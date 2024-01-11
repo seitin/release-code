@@ -35,23 +35,25 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
+      # Runs a single command using the runners shell
+      - name: generate version number
+        run: |
+          echo "creating commit for package.json..."
+          VERSION=$(npm run release:version | tail -n 1)
+          echo "version=$VERSION" >> $GITHUB_ENV
+
       - name: create changelog file
         run: |
           npm run release:changelog > .changelog
           echo $(cat .changelog)
 
-      # Runs a single command using the runners shell
-      - name: create version file and update package.json version
+      - name: update package.json version 
         run: |
-          echo "creating commit for package.json..."
-          VERSION=$(npm run release:version | tail -n 1)
-          echo "version=$VERSION" >> $GITHUB_ENV
           node -e "const package = require('./package.json'); package.version = '$VERSION'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
 
           git add package.json
           git commit -m "Bump version $VERSION"
 
-      
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
