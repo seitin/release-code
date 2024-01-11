@@ -61,7 +61,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: "chore: bump new version"
-          title: "Bump version to release [${{ env.release_branch }}]"
+          title: "Bump version to release [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
           branch: bump/${{ env.version }}
           delete-branch: true
