@@ -9,12 +9,6 @@
     "release": false
   },
   "plugins": {
-    "@release-it/bumper": {
-      "out": {
-        "file": "package.json",
-        "path": "version"
-      }
-    },
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOG.md",
       "preset": {
