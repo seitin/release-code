@@ -29,15 +29,13 @@ jobs:
         run: |
           npm ci
 
-      - name: git config
+      # Runs a single command using the runners shell
+      - name: generate version number and changelog file
         run: |
           git config --global --add safe.directory /__w/release-code/release-code
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
-      # Runs a single command using the runners shell
-      - name: generate version number and changelog file
-        run: |
           npm run release:changelog > .changelog
           echo $(cat .changelog)
 
