@@ -38,6 +38,7 @@ jobs:
       - name: create changelog file
         run: |
           npm run release:changelog > .changelog
+          echo $(cat .changelog)
 
       # Runs a single command using the runners shell
       - name: create version file and update package.json version
