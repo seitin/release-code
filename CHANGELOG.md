@@ -40,3 +40,44 @@
 ### 🐛 Bugfixes
 
 * change settings for workflow ([6cc4c8a](https://github.com/seitin/release-code/commit/6cc4c8a52329f5bac7dc4e841d057a0d6744cee9))
+
+> release-code@3.1.0 release:changelog
+> release-it -c .release-it.json --ci --changelog
+
+## [3.2.0](https://github.com/seitin/release-code/compare/3.1.0...3.2.0) (2024-01-12)
+
+
+### ✨ Features
+
+* add fix B ([5e9dea0](https://github.com/seitin/release-code/commit/5e9dea090da1b5aed32fc61b6e3c469324ae64a8))
+* new feature ([95f5c80](https://github.com/seitin/release-code/commit/95f5c807bd7d6a9bd4123fb07c1445e45898a763))
+* new feature ([9e7cb5a](https://github.com/seitin/release-code/commit/9e7cb5a8261e2bfa0c54f4b572940ba708845c05))
+
+
+### 🐛 Bugfixes
+
+* add fix B ([baeb36d](https://github.com/seitin/release-code/commit/baeb36d997bc6fdb7faa383a5876450a6d712c52))
+
+
+### ⚙️ Continuous Integration
+
+* change events ([b51daa9](https://github.com/seitin/release-code/commit/b51daa973dd30a58bc4ab97799175fabc7db7f15))
+* change events ([c33caac](https://github.com/seitin/release-code/commit/c33caacb365c9f819b5a6475413cfde2d42a4a0e))
+* create release and tag ([61fb193](https://github.com/seitin/release-code/commit/61fb1933e5405f368413f681bd6c384b655d5d87))
+* fix pipeline ([37d23e0](https://github.com/seitin/release-code/commit/37d23e03178f68d8a308aed65db818a1f14047a1))
+* prevent creating release on PR ([88e9e07](https://github.com/seitin/release-code/commit/88e9e07fa5f95df035ea6f6fb1e6a9175df49759))
+
+> release-code@3.2.0 release:changelog
+> release-it -c .release-it.json --ci --changelog
+
+## [3.3.0](https://github.com/seitin/release-code/compare/3.0.1...3.3.0) (2024-01-12)
+
+
+### ✨ Features
+
+* add fix B ([df77e99](https://github.com/seitin/release-code/commit/df77e99226bf82836f28cb263ec699c762a83109))
+
+
+### 🐛 Bugfixes
+
+* add fix B ([045d42a](https://github.com/seitin/release-code/commit/045d42adb6f3a789df5ea59dc4e6a6f15e887301))
