@@ -44,12 +44,14 @@ jobs:
           git config --global user.name "Célula de Ativação"
 
           echo "creating commit for package.json..."
-          VERSION=$(npm run release:version | tail -n 1)
+          VERSION=$(npm run release:version | tail -n +5)
           echo "version=$VERSION" >> $GITHUB_ENV
 
           npm run release:changelog > .changelog
-          cat .changelog >> CHANGELOG.md
           echo $(cat .changelog)
+
+          cat CHANGELOG.md >> .changelog
+          cat .changelog > CHANGELOG.md
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
