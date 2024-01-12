@@ -62,7 +62,7 @@ jobs:
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
           git add package.json
-          git commit -m "Bump version ${{ env.version }}"
+          # git commit -m "Bump version ${{ env.version }}"
 
       - name: push new version
         uses: stefanzweifel/git-auto-commit-action@v5
