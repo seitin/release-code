@@ -7,8 +7,6 @@ on:
     inputs:
   push:
     branch: [ "main" ]
-  pull_request:
-    type: [ "ready_for_review" ]
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
