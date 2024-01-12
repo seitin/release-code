@@ -1,3 +1,14 @@
+## [3.4.5](https://github.com/seitin/release-code/compare/3.4.4...3.4.5) (2024-01-12)
+
+
+### 📚 Documentation
+
+* change changelog ([552984f](https://github.com/seitin/release-code/commit/552984f34e9f5df11f28e9b2b0f5078a30ebb10c))
+
+
+### ⚙️ Continuous Integration
+
+* fix ([140728c](https://github.com/seitin/release-code/commit/140728c1ed6c967e565d4466e5d29717f0275d3b))
 ## [3.4.4](https://github.com/seitin/release-code/compare/3.4.2...3.4.4) (2024-01-12)
 
 
