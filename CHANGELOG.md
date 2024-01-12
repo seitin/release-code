@@ -1,7 +1,3 @@
-
-> release-code@3.4.1 release:changelog
-> release-it -c .release-it.json --ci --changelog
-
 ## [3.4.2](https://github.com/seitin/release-code/compare/3.4.1...3.4.2) (2024-01-12)
 
 

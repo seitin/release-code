@@ -73,7 +73,7 @@ jobs:
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
-          bodyFile: .changelog
+          bodyFile: .last_changelog
       # - name: create version pull request
       #   uses: peter-evans/create-pull-request@v5
       #   with:
