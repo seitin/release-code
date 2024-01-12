@@ -1,4 +1,24 @@
 
+> release-code@3.3.0 release:changelog
+> release-it -c .release-it.json --ci --changelog
+
+## [3.4.0](https://github.com/seitin/release-code/compare/3.3.0...3.4.0) (2024-01-12)
+
+
+### ✨ Features
+
+* add fix B ([df77e99](https://github.com/seitin/release-code/commit/df77e99226bf82836f28cb263ec699c762a83109))
+
+
+### 🐛 Bugfixes
+
+* add fix B ([045d42a](https://github.com/seitin/release-code/commit/045d42adb6f3a789df5ea59dc4e6a6f15e887301))
+
+
+### ⚙️ Continuous Integration
+
+* fix changelog order ([85fbbcf](https://github.com/seitin/release-code/commit/85fbbcf741b008bad70f268e2e89b1cb1075b06b))
+
 
 ## [2.0.0](https://github.com/seitin/release-code/compare/1.5.5...2.0.0) (2024-01-11)
 
