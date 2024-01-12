@@ -1,6 +1,7 @@
 {
   "npm": {
-    "publish": false
+    "publish": false,
+    "requireBranch": ["main"]
   },
   "git": {
     "commitMessage": "chore: release v${version}"
@@ -10,12 +11,13 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
       "preset": {
         "name": "conventionalcommits",
         "types": [
           {
             "section": "✨ Features",
-            "type": "feature"
+            "type": "feat"
           },
           {
             "section": "🐛 Bugfixes",
@@ -23,18 +25,43 @@
           },
           {
             "section": "📚 Documentation",
-            "type": "doc"
+            "type": "docs"
           },
           {
-            "section": "🔥 Refactor",
+            "section": "💎 Styles",
+            "type": "style"
+          },
+          {
+            "section": "📦 Refactor",
             "type": "refactor"
           },
           {
-            "section": "🔖 Chore",
+            "section": "🚀 Performance",
+            "type": "perf"
+          },
+          {
+            "section": "🚨 Tests",
+            "type": "test"
+          },
+          {
+            "section": "🛠 Build",
+            "type": "build"
+          },
+          {
+            "section": "⚙️ Continuous Integration",
+            "type": "ci"
+          },
+          {
+            "section": "♻️ Chore",
             "type": "chore"
+          },
+          {
+            "section": "🗑 Reverts",
+            "type": "revert"
           }
         ]
       }
     }
-  }
+  },
+  "version": "2.0.0"
 }

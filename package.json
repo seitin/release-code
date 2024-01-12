@@ -1,11 +1,12 @@
 {
   "name": "release-code",
-  "version": "1.5.0",
+  "version": "3.0.0",
   "description": "Tests for release it",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Tested!\"",
     "release:version": "release-it -c .release-it.json --ci --release-version",
+    "release:changelog": "release-it -c .release-it.json --ci --changelog",
     "release": "release-it -c .release-it.json --ci"
   },
   "author": "",
