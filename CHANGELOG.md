@@ -1,3 +1,20 @@
+## [3.4.7](https://github.com/seitin/release-code/compare/3.4.6...3.4.7) (2024-01-12)
+
+
+### ⚙️ Continuous Integration
+
+* fix ci branch ([c25d2a7](https://github.com/seitin/release-code/commit/c25d2a7eeae9e75b0189787e1255bcdca3200639))
+
+
+### ♻️ Chore
+
+* remove comments ([7ae2ebf](https://github.com/seitin/release-code/commit/7ae2ebfaed1b485e577362db60d2005edfe7cd83))
+## [3.4.6](https://github.com/seitin/release-code/compare/3.4.5...3.4.6) (2024-01-12)
+
+
+### ♻️ Chore
+
+* remove comments ([7ae2ebf](https://github.com/seitin/release-code/commit/7ae2ebfaed1b485e577362db60d2005edfe7cd83))
 ## [3.4.5](https://github.com/seitin/release-code/compare/3.4.4...3.4.5) (2024-01-12)
 
 
