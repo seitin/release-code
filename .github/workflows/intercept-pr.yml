@@ -1,12 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Intercept PR for versioning
+name: Bump version on PR
 
 on: 
-  pull_request:
-    types:
-      - closed
-
+  workflow_dispatch:
+    inputs:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
