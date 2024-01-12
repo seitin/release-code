@@ -1,3 +1,15 @@
+## [3.4.4](https://github.com/seitin/release-code/compare/3.4.2...3.4.4) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([9dafdc8](https://github.com/seitin/release-code/commit/9dafdc88726cb05ee359063dda36e1831b938d5d))
+* ci ([00ba46d](https://github.com/seitin/release-code/commit/00ba46d758c25d5191485fcfbb3c33537209b209))
+
+
+### 📚 Documentation
+
+* change changelog ([552984f](https://github.com/seitin/release-code/commit/552984f34e9f5df11f28e9b2b0f5078a30ebb10c))
 ## [3.4.3](https://github.com/seitin/release-code/compare/3.4.2...3.4.3) (2024-01-12)
 
 
