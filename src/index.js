@@ -6,3 +6,4 @@ console.log("I'm a fix!");
 console.log("I'm a feature!");
 console.log("I'm a feature!");
 console.log("I'm a fix!");
+console.log("I'm a fix!");
