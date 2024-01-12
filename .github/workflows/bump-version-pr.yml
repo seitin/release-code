@@ -61,19 +61,19 @@ jobs:
           git add CHANGELOG.md
           # git commit -m "Bump version ${{ env.version }}"
 
-      - name: push new version
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Bump version ${{ env.version }}
-          branch: ${{ steps.extract_branch.outputs.branch }}
-          file_pattern: 'package.json CHANGELOG.md'
-
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
           bodyFile: .last_changelog
+
+      - name: push new version
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Bump version ${{ env.version }}
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          file_pattern: 'package.json CHANGELOG.md'
       # - name: create version pull request
       #   uses: peter-evans/create-pull-request@v5
       #   with:
