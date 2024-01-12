@@ -48,18 +48,11 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_ENV
 
           npm run release:changelog > .last_changelog
-          echo .last_changelog > .changelog
+          cat .last_changelog > .changelog
           echo $(cat .last_changelog)
 
           cat CHANGELOG.md >> .changelog
           cat .changelog > CHANGELOG.md
-
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ env.version }}
-          name: Release ${{ env.version }}
-          bodyFile: .changelog
 
       - name: update package.json version 
         run: |
@@ -75,6 +68,12 @@ jobs:
           branch: ${{ steps.extract_branch.outputs.branch }}
           file_pattern: 'package.json CHANGELOG.md'
 
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.version }}
+          name: Release ${{ env.version }}
+          bodyFile: .changelog
       # - name: create version pull request
       #   uses: peter-evans/create-pull-request@v5
       #   with:
