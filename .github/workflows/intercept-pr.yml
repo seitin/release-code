@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Create PR for new release
+name: Intercept PR for versioning
 
 on: 
   pull_request:
