@@ -1,0 +1,86 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Create PR for new release
+
+on: 
+  pull_request:
+    types:
+      - closed
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  branching:
+    if: github.event.pull_request.merged == true
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+    container:
+      image: node:18
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+
+      - name: Extract branch name
+        shell: bash
+        run: |
+          BRANCH_NAME="branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+          echo "branch name: $BRANCH_NAME"
+          echo $BRANCH_NAME >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      # Runs a single command using the runners shell
+      - name: npm install
+        run: |
+          npm ci
+
+      # Runs a single command using the runners shell
+      - name: generate version number and changelog file
+        run: |
+          git config --global --add safe.directory /__w/release-code/release-code
+          git config --global user.email "flavia.taho@grupoboticario.com.br"
+          git config --global user.name "Célula de Ativação"
+
+          echo "creating commit for package.json..."
+          VERSION=$(npm run release:version | tail -n 1)
+          echo "version=$VERSION" >> $GITHUB_ENV
+
+          npm run release:changelog > .changelog
+          echo $(cat .changelog)
+
+
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.version }}
+          name: Release ${{ env.version }}
+          bodyFile: .changelog
+
+      - name: update package.json version 
+        run: |
+          node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
+          git add package.json
+          git commit -m "Bump version ${{ env.version }}"
+
+      - name: push new version
+        uses: stefanzweifel/git-auto-commit-action@v5
+        commit_message: Bump version ${{ env.version }}
+        branch: ${{ steps.extract_branch.outputs.branch }}
+        file_pattern: 'package.json'
+
+      # - name: create version pull request
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     commit-message: "chore: bump new version"
+      #     title: "Bump version to release [${{ env.version }}]"
+      #     body: "Pull request created automatically for versioning"
+      #     branch: bump/${{ env.version }}
+      #     delete-branch: true
+      #     add-paths: |
+      #       package.json
+
