@@ -1,18 +1,15 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Intercept PR for versioning
+name: Bump version on PR
 
 on: 
-  pull_request:
-    types:
-      - closed
-
+  workflow_dispatch:
+    inputs:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   branching:
-    if: github.event.pull_request.merged == true
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # runs-on: self-hosted
@@ -51,8 +48,8 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_ENV
 
           npm run release:changelog > .changelog
+          cat .changelog >> CHANGELOG.md
           echo $(cat .changelog)
-
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
@@ -65,14 +62,15 @@ jobs:
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
           git add package.json
-          git commit -m "Bump version ${{ env.version }}"
+          git add CHANGELOG.md
+          # git commit -m "Bump version ${{ env.version }}"
 
       - name: push new version
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Bump version ${{ env.version }}
           branch: ${{ steps.extract_branch.outputs.branch }}
-          file_pattern: 'package.json'
+          file_pattern: 'package.json CHANGELOG.md'
 
       # - name: create version pull request
       #   uses: peter-evans/create-pull-request@v5
