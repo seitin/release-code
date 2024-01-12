@@ -69,9 +69,10 @@ jobs:
 
       - name: push new version
         uses: stefanzweifel/git-auto-commit-action@v5
-        commit_message: Bump version ${{ env.version }}
-        branch: ${{ steps.extract_branch.outputs.branch }}
-        file_pattern: 'package.json'
+        with:
+          commit_message: Bump version ${{ env.version }}
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          file_pattern: 'package.json'
 
       # - name: create version pull request
       #   uses: peter-evans/create-pull-request@v5
