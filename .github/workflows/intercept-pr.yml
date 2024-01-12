@@ -51,12 +51,12 @@ jobs:
           echo $(cat .changelog)
 
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ env.version }}
-          name: Release ${{ env.version }}
-          bodyFile: .changelog
+      # - name: Create a GitHub release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     tag: ${{ env.version }}
+      #     name: Release ${{ env.version }}
+      #     bodyFile: .changelog
 
       - name: update package.json version 
         run: |
