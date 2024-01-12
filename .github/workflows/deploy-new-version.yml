@@ -36,12 +36,13 @@ jobs:
           git config --global user.email "flavia.taho@grupoboticario.com.br"
           git config --global user.name "Célula de Ativação"
 
-          npm run release:changelog > .changelog
-          echo $(cat .changelog)
-
           echo "creating commit for package.json..."
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
+
+          npm run release:changelog > .changelog
+          echo $(cat .changelog)
+
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
