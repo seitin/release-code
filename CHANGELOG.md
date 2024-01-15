@@ -1,3 +1,9 @@
+## [3.4.8](https://github.com/seitin/release-code/compare/3.4.7...3.4.8) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([3844a89](https://github.com/seitin/release-code/commit/3844a89befbb9f4e1c1547029c9e6ac65ce2529a))
 ## [3.4.7](https://github.com/seitin/release-code/compare/3.4.6...3.4.7) (2024-01-12)
 
 
