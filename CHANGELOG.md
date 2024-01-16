@@ -1,3 +1,10 @@
+## [3.11.2](https://github.com/seitin/release-code/compare/3.11.1...3.11.2) (2024-01-16)
+## [3.11.1](https://github.com/seitin/release-code/compare/3.11.0...3.11.1) (2024-01-16)
+
+
+### ♻️ Chore
+
+* Bump version 3.11.0 ([8743d1e](https://github.com/seitin/release-code/commit/8743d1e20b0f5a46b94aa4aa904974aee9af6a1a))
 ## [3.11.0](https://github.com/seitin/release-code/compare/3.10.1...3.11.0) (2024-01-16)
 
 
