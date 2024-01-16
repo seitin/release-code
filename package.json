@@ -1,8 +1,9 @@
 {
   "name": "release-code",
-  "version": "3.10.1",
+  "version": "3.11.0",
   "description": "Tests for release it",
   "main": "index.js",
+  "git": "https://github.com/seitin/release-code",
   "scripts": {
     "test": "echo \"Tested!\"",
     "release:version": "release-it -c .release-it.json --ci --release-version",
