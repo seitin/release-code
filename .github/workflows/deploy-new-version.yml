@@ -40,8 +40,12 @@ jobs:
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
 
-          npm run release:changelog > .changelog
-          echo $(cat .changelog)
+          npm run release:changelog | tail -n +5 > .last_changelog
+          cat .last_changelog > .changelog
+          echo $(cat .last_changelog)
+
+          cat CHANGELOG.md >> .changelog
+          cat .changelog > CHANGELOG.md
 
 
       - name: Create a GitHub release
@@ -55,15 +59,28 @@ jobs:
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
           git add package.json
+          git add CHANGELOG.md
           git commit -m "Bump version ${{ env.version }}"
 
-      - name: create version pull request
+      - name: create version pull request to main
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: "chore: bump new version"
           title: "Bump version to release [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
           branch: bump/${{ env.version }}
-          delete-branch: true
           add-paths: |
             package.json
+            CHANGELOG.md
+
+      - name: create version pull request to release
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "chore: bump new version"
+          title: "Bump version to release [${{ env.version }}]"
+          body: "Pull request created automatically for versioning"
+          branch: bump/${{ env.version }}
+          base: release
+          add-paths: |
+            package.json
+            CHANGELOG.md
