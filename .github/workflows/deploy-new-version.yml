@@ -29,42 +29,43 @@ jobs:
         run: |
           npm ci
 
-      # Runs a single command using the runners shell
-      - name: generate version number and changelog file
-        run: |
-          git config --global --add safe.directory /__w/release-code/release-code
-          git config --global user.email "flavia.taho@grupoboticario.com.br"
-          git config --global user.name "Célula de Ativação"
+      # # Runs a single command using the runners shell
+      # - name: generate version number and changelog file
+      #   run: |
+      #     git config --global --add safe.directory /__w/release-code/release-code
+      #     git config --global user.email "flavia.taho@grupoboticario.com.br"
+      #     git config --global user.name "Célula de Ativação"
 
-          echo "creating commit for package.json..."
-          VERSION=$(npm run release:version | tail -n 1)
-          echo "version=$VERSION" >> $GITHUB_ENV
+      #     echo "creating commit for package.json..."
+      #     VERSION=$(npm run release:version | tail -n 1)
+      #     echo "version=$VERSION" >> $GITHUB_ENV
 
-          npm run release:changelog | tail -n +5 > .last_changelog
-          cat .last_changelog > .changelog
-          echo $(cat .last_changelog)
+      #     npm run release:changelog | tail -n +5 > .last_changelog
+      #     cat .last_changelog > .changelog
+      #     echo $(cat .last_changelog)
 
-          cat CHANGELOG.md >> .changelog
-          cat .changelog > CHANGELOG.md
+      #     cat CHANGELOG.md >> .changelog
+      #     cat .changelog > CHANGELOG.md
 
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ env.version }}
-          name: Release ${{ env.version }}
-          bodyFile: .changelog
+      # - name: Create a GitHub release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     tag: ${{ env.version }}
+      #     name: Release ${{ env.version }}
+      #     bodyFile: .changelog
 
-      - name: update package.json version 
-        run: |
-          node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
-          git add package.json
-          git add CHANGELOG.md
-          git commit -m "Bump version ${{ env.version }}"
+      # - name: update package.json version 
+      #   run: |
+      #     node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
+      #     git add package.json
+      #     git add CHANGELOG.md
+      #     # git commit -m "Bump version ${{ env.version }}"
 
       - name: create version pull request to main
         uses: peter-evans/create-pull-request@v5
         with:
+          commit-message: "chore: bump new version"
           title: "Bump version to release [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
           branch: bump/${{ env.version }}
@@ -75,6 +76,7 @@ jobs:
       - name: create version pull request to release
         uses: peter-evans/create-pull-request@v5
         with:
+          commit-message: "chore: bump new version"
           title: "Bump version to release [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
           branch: bump/${{ env.version }}
