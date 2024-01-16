@@ -74,12 +74,19 @@ jobs:
             CHANGELOG.md
 
       - name: create version pull request to release
-        uses: peter-evans/create-pull-request@v5
-        with:
-          title: "Bump version to release [${{ env.version }}]"
-          body: "Pull request created automatically for versioning"
-          branch: bump/${{ env.version }}
-          base: release
-          add-paths: |
-            package.json
-            CHANGELOG.md
+        uses: poorva17/create-pr-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: bump/${{ env.version }} 
+          BASE_BRANCH: release
+
+      # - name: create version pull request to release
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Bump version to release [${{ env.version }}]"
+      #     body: "Pull request created automatically for versioning"
+      #     branch: bump/${{ env.version }}
+      #     base: release
+      #     add-paths: |
+      #       package.json
+      #       CHANGELOG.md
