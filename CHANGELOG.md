@@ -3,6 +3,23 @@
 
 ### ⚙️ Continuous Integration
 
+* fix ([a81d223](https://github.com/seitin/release-code/commit/a81d223ebc75549889de19a35f5d65285d990866))
+* fix ([e6d6f65](https://github.com/seitin/release-code/commit/e6d6f6552b3eb9fd6bffd038dbd65d93fbb0d384))
+* fix ([171d6bf](https://github.com/seitin/release-code/commit/171d6bfc0765e3143b245b194dbbcdb98939883f))
+* fix ([9900ef7](https://github.com/seitin/release-code/commit/9900ef7b7652d03813f04577447ed36d5d911b01))
+* fix ([d7623d5](https://github.com/seitin/release-code/commit/d7623d505f51f59c1a6043adf2c11fcb093a02eb))
+* fix ([804a86f](https://github.com/seitin/release-code/commit/804a86fc5ecce58f248bc8a5e95390e5af200735))
+* fix ([42c16ba](https://github.com/seitin/release-code/commit/42c16bad4a0996b72f25c2a852ff0d4ed16bc522))
+
+
+### ♻️ Chore
+
+* bump new version ([c284d61](https://github.com/seitin/release-code/commit/c284d613c044e4437afbb23b07d56bf311953a18))
+## [3.8.2](https://github.com/seitin/release-code/compare/3.8.1...3.8.2) (2024-01-16)
+
+
+### ⚙️ Continuous Integration
+
 * fix ([9900ef7](https://github.com/seitin/release-code/commit/9900ef7b7652d03813f04577447ed36d5d911b01))
 * fix ([d7623d5](https://github.com/seitin/release-code/commit/d7623d505f51f59c1a6043adf2c11fcb093a02eb))
 * fix ([804a86f](https://github.com/seitin/release-code/commit/804a86fc5ecce58f248bc8a5e95390e5af200735))
