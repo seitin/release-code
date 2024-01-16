@@ -4,7 +4,7 @@
     "requireBranch": ["main"]
   },
   "git": {
-    "changelog": "git log --pretty=format:\"*%s%n%b\" | xargs -I _ echo \"_\"",
+    "changelog": "git log --pretty=format:\"*%s%n%b\"",
     "commitMessage": "chore: release v${version}"
   },
   "github": {
