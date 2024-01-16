@@ -74,13 +74,13 @@ jobs:
             package.json
             CHANGELOG.md
 
-      - name: create version pull request to release
-        uses: peter-evans/create-pull-request@v5
-        with:
-          title: "Bump version to release [${{ env.version }}]"
-          body: "Pull request created automatically for versioning"
-          branch: bump/${{ env.version }}
-          base: release
-          add-paths: |
-            package.json
-            CHANGELOG.md
+      # - name: create version pull request to release
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Bump version to release [${{ env.version }}]"
+      #     body: "Pull request created automatically for versioning"
+      #     branch: bump/${{ env.version }}
+      #     base: release
+      #     add-paths: |
+      #       package.json
+      #       CHANGELOG.md
