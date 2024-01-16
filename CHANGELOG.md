@@ -1,3 +1,4 @@
+## [3.11.2](https://github.com/seitin/release-code/compare/3.11.1...3.11.2) (2024-01-16)
 ## [3.11.1](https://github.com/seitin/release-code/compare/3.11.0...3.11.1) (2024-01-16)
 
 
