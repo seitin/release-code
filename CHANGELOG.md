@@ -1,3 +1,20 @@
+## [3.11.0](https://github.com/seitin/release-code/compare/3.10.1...3.11.0) (2024-01-16)
+
+
+### ✨ Features
+
+* add changes to package.json ([d36bdd7](https://github.com/seitin/release-code/commit/d36bdd79e8f4eaf3012c3e276de01f8c6e643eeb))
+* teste de changelog squash merged ([28eda6c](https://github.com/seitin/release-code/commit/28eda6c74bdc9ca6b46cb528c87739728a7ac9f8))
+
+
+### 🐛 Bugfixes
+
+* package.json file ([5bd3856](https://github.com/seitin/release-code/commit/5bd3856cbf4d75ce372d3bc9bec3b18f7e725ce4))
+
+
+### ♻️ Chore
+
+* Bump version 3.10.1 ([7819175](https://github.com/seitin/release-code/commit/7819175f8742853b453292908ad68f79280c8b50))
 ## [3.10.1](https://github.com/seitin/release-code/compare/3.9.1...3.10.1) (2024-01-16)
 
 
