@@ -4,7 +4,7 @@
     "requireBranch": ["main"]
   },
   "git": {
-    "changelog": "git log --pretty=format:\"*%s|&|&%b${from}...${to}\" | tr \"|&|&\" \"\n\" | grep -v '^[[:space:]]*$'"
+    "changelog": "git log --pretty=format:\"*%s|&|&%b\" ${from}...${to} | tr \"|&|&\" \"\n\" | grep -v '^[[:space:]]*$'"
   },
   "github": {
     "release": false
