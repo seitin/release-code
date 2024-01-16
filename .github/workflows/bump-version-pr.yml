@@ -47,16 +47,12 @@ jobs:
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
 
-          npm run release:changelog > .changelog
-          cat .changelog >> CHANGELOG.md
-          echo $(cat .changelog)
+          npm run release:changelog | tail -n +5 > .last_changelog
+          cat .last_changelog > .changelog
+          echo $(cat .last_changelog)
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ env.version }}
-          name: Release ${{ env.version }}
-          bodyFile: .changelog
+          cat CHANGELOG.md >> .changelog
+          cat .changelog > CHANGELOG.md
 
       - name: update package.json version 
         run: |
@@ -72,14 +68,11 @@ jobs:
           branch: ${{ steps.extract_branch.outputs.branch }}
           file_pattern: 'package.json CHANGELOG.md'
 
-      # - name: create version pull request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     commit-message: "chore: bump new version"
-      #     title: "Bump version to release [${{ env.version }}]"
-      #     body: "Pull request created automatically for versioning"
-      #     branch: bump/${{ env.version }}
-      #     delete-branch: true
-      #     add-paths: |
-      #       package.json
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.version }}
+          name: Release ${{ env.version }}
+          bodyFile: .last_changelog
+          commit: ${{ steps.extract_branch.outputs.branch }}
 

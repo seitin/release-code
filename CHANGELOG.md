@@ -1,68 +1,81 @@
+## [3.6.0](https://github.com/seitin/release-code/compare/3.5.0...3.6.0) (2024-01-15)
 
-
-## [2.0.0](https://github.com/seitin/release-code/compare/1.5.5...2.0.0) (2024-01-11)
-
-
-### ⚠ BREAKING CHANGES
-
-* break change feature
 
 ### ✨ Features
 
-* added new feature ([ebcfc47](https://github.com/seitin/release-code/commit/ebcfc476feaf956668a059e92dca10603c081861))
-* break change feature ([2961e84](https://github.com/seitin/release-code/commit/2961e84d9b002c8727b83e316931f98d7498dcab))
+* nova feature ([e310181](https://github.com/seitin/release-code/commit/e310181a56d6a52ab765825a11e17b9e601ea00e))
 
 
 ### 🐛 Bugfixes
 
-* add a fix ([78e1030](https://github.com/seitin/release-code/commit/78e10308a6e3c1fa7b81fc08d287ddb74390bc6d))
+* novo fix ([e082e97](https://github.com/seitin/release-code/commit/e082e97fc74ec6e69538be62ebed086785a8d692))
+## [3.4.8](https://github.com/seitin/release-code/compare/3.4.7...3.4.8) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([3844a89](https://github.com/seitin/release-code/commit/3844a89befbb9f4e1c1547029c9e6ac65ce2529a))
+## [3.4.7](https://github.com/seitin/release-code/compare/3.4.6...3.4.7) (2024-01-12)
 
 
 ### ⚙️ Continuous Integration
 
-* add change on release it conf ([379479d](https://github.com/seitin/release-code/commit/379479da70fd83a3d2a8029baee45e43e9b60750))
-* add ci change ([cb74b1e](https://github.com/seitin/release-code/commit/cb74b1e2b6aace75c556ff0c11c1043c5ba32cbf))
-* invert changelog / version generation order ([c82b584](https://github.com/seitin/release-code/commit/c82b58418aa8b08a62b8f0f9b6f06ae7684bfc00))
-
-## [2.0.0](https://github.com/seitin/release-code/compare/1.5.3...2.0.0) (2024-01-11)
+* fix ci branch ([c25d2a7](https://github.com/seitin/release-code/commit/c25d2a7eeae9e75b0189787e1255bcdca3200639))
 
 
-### ⚠ BREAKING CHANGES
+### ♻️ Chore
 
-* change settings for workflow
-
-### ✨ Features
-
-* add bumper plugin ([e503456](https://github.com/seitin/release-code/commit/e5034564dc279b626bb071163575297297c150f0))
-* change settings for workflow ([bb81fcf](https://github.com/seitin/release-code/commit/bb81fcfbe722c7320373cb613c3f60f69633342a))
+* remove comments ([7ae2ebf](https://github.com/seitin/release-code/commit/7ae2ebfaed1b485e577362db60d2005edfe7cd83))
+## [3.4.6](https://github.com/seitin/release-code/compare/3.4.5...3.4.6) (2024-01-12)
 
 
-### 🐛 Bugfixes
+### ♻️ Chore
 
-* change settings for workflow ([6cc4c8a](https://github.com/seitin/release-code/commit/6cc4c8a52329f5bac7dc4e841d057a0d6744cee9))
-
-> release-code@3.1.0 release:changelog
-> release-it -c .release-it.json --ci --changelog
-
-## [3.2.0](https://github.com/seitin/release-code/compare/3.1.0...3.2.0) (2024-01-12)
+* remove comments ([7ae2ebf](https://github.com/seitin/release-code/commit/7ae2ebfaed1b485e577362db60d2005edfe7cd83))
+## [3.4.5](https://github.com/seitin/release-code/compare/3.4.4...3.4.5) (2024-01-12)
 
 
-### ✨ Features
+### 📚 Documentation
 
-* add fix B ([5e9dea0](https://github.com/seitin/release-code/commit/5e9dea090da1b5aed32fc61b6e3c469324ae64a8))
-* new feature ([95f5c80](https://github.com/seitin/release-code/commit/95f5c807bd7d6a9bd4123fb07c1445e45898a763))
-* new feature ([9e7cb5a](https://github.com/seitin/release-code/commit/9e7cb5a8261e2bfa0c54f4b572940ba708845c05))
-
-
-### 🐛 Bugfixes
-
-* add fix B ([baeb36d](https://github.com/seitin/release-code/commit/baeb36d997bc6fdb7faa383a5876450a6d712c52))
+* change changelog ([552984f](https://github.com/seitin/release-code/commit/552984f34e9f5df11f28e9b2b0f5078a30ebb10c))
 
 
 ### ⚙️ Continuous Integration
 
-* change events ([b51daa9](https://github.com/seitin/release-code/commit/b51daa973dd30a58bc4ab97799175fabc7db7f15))
-* change events ([c33caac](https://github.com/seitin/release-code/commit/c33caacb365c9f819b5a6475413cfde2d42a4a0e))
-* create release and tag ([61fb193](https://github.com/seitin/release-code/commit/61fb1933e5405f368413f681bd6c384b655d5d87))
-* fix pipeline ([37d23e0](https://github.com/seitin/release-code/commit/37d23e03178f68d8a308aed65db818a1f14047a1))
-* prevent creating release on PR ([88e9e07](https://github.com/seitin/release-code/commit/88e9e07fa5f95df035ea6f6fb1e6a9175df49759))
+* fix ([140728c](https://github.com/seitin/release-code/commit/140728c1ed6c967e565d4466e5d29717f0275d3b))
+## [3.4.4](https://github.com/seitin/release-code/compare/3.4.2...3.4.4) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([9dafdc8](https://github.com/seitin/release-code/commit/9dafdc88726cb05ee359063dda36e1831b938d5d))
+* ci ([00ba46d](https://github.com/seitin/release-code/commit/00ba46d758c25d5191485fcfbb3c33537209b209))
+
+
+### 📚 Documentation
+
+* change changelog ([552984f](https://github.com/seitin/release-code/commit/552984f34e9f5df11f28e9b2b0f5078a30ebb10c))
+## [3.4.3](https://github.com/seitin/release-code/compare/3.4.2...3.4.3) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([9dafdc8](https://github.com/seitin/release-code/commit/9dafdc88726cb05ee359063dda36e1831b938d5d))
+* ci ([00ba46d](https://github.com/seitin/release-code/commit/00ba46d758c25d5191485fcfbb3c33537209b209))
+
+## [3.4.2](https://github.com/seitin/release-code/compare/3.4.1...3.4.2) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([00ba46d](https://github.com/seitin/release-code/commit/00ba46d758c25d5191485fcfbb3c33537209b209))
+
+
+### 📦 Refactor
+
+* clear changelog ([df2ab22](https://github.com/seitin/release-code/commit/df2ab22a33cc54e23c2d5d23b69874efa973f740))
+
+
+### ⚙️ Continuous Integration
+
+* fix partial changelog ([13c8edc](https://github.com/seitin/release-code/commit/13c8edc7e0ab3fbe47672fde54afce07c438b5a1))
