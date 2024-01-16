@@ -1,3 +1,14 @@
+## [3.8.0](https://github.com/seitin/release-code/compare/3.7.0...3.8.0) (2024-01-16)
+
+
+### ✨ Features
+
+* nova feat 2 ([3968027](https://github.com/seitin/release-code/commit/39680275627a134c8dfc07a27366a289ac5b3f47))
+
+
+### 🐛 Bugfixes
+
+* novo fix ([3b416b3](https://github.com/seitin/release-code/commit/3b416b3a1ce85ab842febd873ce6017542a43a18))
 ## [3.6.0](https://github.com/seitin/release-code/compare/3.5.0...3.6.0) (2024-01-15)
 
 
