@@ -1,3 +1,16 @@
+## [3.10.1](https://github.com/seitin/release-code/compare/3.9.1...3.10.1) (2024-01-16)
+
+
+### ⚙️ Continuous Integration
+
+* fix ([3ed9434](https://github.com/seitin/release-code/commit/3ed943476f129ea7daa8e1ff3fa0f386989441f0))
+* fix ([8fd91f8](https://github.com/seitin/release-code/commit/8fd91f84d854ab22728868fc09f8824281dfea0d))
+
+
+### ♻️ Chore
+
+* Bump version 3.10.0 ([e541baa](https://github.com/seitin/release-code/commit/e541baa1e91c95de59a4b8b95bb86f936dec206c))
+* Bump version 3.9.1 ([fe9d90d](https://github.com/seitin/release-code/commit/fe9d90d56d4ab173ba0c7bcf99bf11f29df3a894))
 
 ## [3.9.1](https://github.com/seitin/release-code/compare/3.10.0...3.9.1) (2024-01-16)
 
@@ -6,6 +19,7 @@
 
 * fix ([e0923ac](https://github.com/seitin/release-code/commit/e0923ac30b44816c5c0c941316ca5205da621770))
 * fix ([e13ace4](https://github.com/seitin/release-code/commit/e13ace452e923789bceb05c23ab2fea83220b1d3))
+
 
 ## [3.10.0](https://github.com/seitin/release-code/compare/3.9.0...3.10.0) (2024-01-16)
 
