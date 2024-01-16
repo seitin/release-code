@@ -4,7 +4,6 @@
     "requireBranch": ["main"]
   },
   "git": {
-    "changelog": "git log --pretty=format:\"*%s%n%b\"",
     "commitMessage": "chore: release v${version}"
   },
   "github": {
