@@ -53,7 +53,7 @@ jobs:
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
-          bodyFile: .changelog
+          bodyFile: .last_changelog
 
       - name: update package.json version 
         run: |
