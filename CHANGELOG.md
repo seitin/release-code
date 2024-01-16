@@ -1,3 +1,20 @@
+## [3.6.0](https://github.com/seitin/release-code/compare/3.5.0...3.6.0) (2024-01-15)
+
+
+### ✨ Features
+
+* nova feature ([e310181](https://github.com/seitin/release-code/commit/e310181a56d6a52ab765825a11e17b9e601ea00e))
+
+
+### 🐛 Bugfixes
+
+* novo fix ([e082e97](https://github.com/seitin/release-code/commit/e082e97fc74ec6e69538be62ebed086785a8d692))
+## [3.4.8](https://github.com/seitin/release-code/compare/3.4.7...3.4.8) (2024-01-12)
+
+
+### 🐛 Bugfixes
+
+* ci ([3844a89](https://github.com/seitin/release-code/commit/3844a89befbb9f4e1c1547029c9e6ac65ce2529a))
 ## [3.4.7](https://github.com/seitin/release-code/compare/3.4.6...3.4.7) (2024-01-12)
 
 
