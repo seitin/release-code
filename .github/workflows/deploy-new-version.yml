@@ -53,7 +53,7 @@ jobs:
         with:
           tag: ${{ env.version }}
           name: Release ${{ env.version }}
-          bodyFile: .changelog
+          bodyFile: .last_changelog
 
       - name: update package.json version 
         run: |
@@ -62,7 +62,7 @@ jobs:
           git add CHANGELOG.md
           git commit -m "chore: Bump version ${{ env.version }}"
 
-      - name: create version pull request to main
+      - name: create release pull request to main branch
         uses: peter-evans/create-pull-request@v5
         with:
           title: "Bump version to release [${{ env.version }}]"
@@ -73,7 +73,7 @@ jobs:
             package.json
             CHANGELOG.md
 
-      - name: Create Pull Request
+      - name: create release pull request to release branch 
         uses: actions/github-script@v6
         with:
           script: |
