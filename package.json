@@ -3,19 +3,7 @@
   "version": "3.10.1",
   "description": "Tests for release it",
   "main": "index.js",
-  "release": {
-    "branches": [
-      "bump/10.10.10", "main"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/exec",
-        {
-          "verifyReleaseCmd": "echo ${nextRelease.version} > .VERSION"
-        }
-      ]
-    ]
-  },
+  "git": "https://github.com/seitin/release-code",
   "scripts": {
     "test": "echo \"Tested!\"",
     "release:version": "release-it -c .release-it.json --ci --release-version",
@@ -29,10 +17,6 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^11.1.0",
-    "@semantic-release/git": "^10.0.1",
     "release-it": "^17.0.1",
-    "semantic-release-unsquash": "^0.2.0"
   }
 }
