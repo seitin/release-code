@@ -1,3 +1,7 @@
+[0.0.5]
+Bump version to release [0.0.4] (#219)\nchore: Bump version 0.0.4
+
+Co-authored-by: Célula de Ativação <flavia.taho@grupoboticario.com.br>
 [0.0.4]
 Test (#218)\n* bump 0.0.1
 
