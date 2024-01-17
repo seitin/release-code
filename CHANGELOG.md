@@ -1,0 +1,33 @@
+## [0.1.0](https://github.com/seitin/release-code/compare/0.0.5...0.1.0) (2024-01-17)
+
+
+### ✨ Features
+
+* new feature ([fcc5c11](https://github.com/seitin/release-code/commit/fcc5c1131a016e55877cffd8d0bffacdff15cc19))
+* new feature ([d50c4d7](https://github.com/seitin/release-code/commit/d50c4d71102f59c7de2f9ccd70038f8fce84ee74))
+* new feature ([5811fca](https://github.com/seitin/release-code/commit/5811fcabcca011c30cd2c697bc96a63bef788bca))
+
+
+### 🐛 Bugfixes
+
+* issue on changelog generation ([de3be9b](https://github.com/seitin/release-code/commit/de3be9b4e7a93b3ecef79b68ae8f01d56915f7d0))
+* new fix ([63ad0f9](https://github.com/seitin/release-code/commit/63ad0f9d25bac918af7bcfc3efda2ff39428465c))
+* new fix ([f746bf7](https://github.com/seitin/release-code/commit/f746bf7ddab7c5188ef224acb05744f3e74125aa))
+* new fix ([509c46f](https://github.com/seitin/release-code/commit/509c46ff396696fd41c0827decb4644588f5cf0d))
+
+
+### 📦 Refactor
+
+* clear changelog ([ffd593e](https://github.com/seitin/release-code/commit/ffd593e1977e11f81f65e9394f7edf0c2751c54c))
+* rollback to default changelog ([f6a654f](https://github.com/seitin/release-code/commit/f6a654fcb7a09119bed0dd3d1af24e53167df613))
+
+
+### ⚙️ Continuous Integration
+
+* change changelog creation ([fa4daf6](https://github.com/seitin/release-code/commit/fa4daf69808cc6ae5979bcd9b54a0c1d5f96639a))
+* change changelog creation ([465b7d0](https://github.com/seitin/release-code/commit/465b7d009e37e85fd3eb1e1d782e53176e647a32))
+
+
+### ♻️ Chore
+
+* Bump version 0.0.5 ([a4a99c0](https://github.com/seitin/release-code/commit/a4a99c099678e4e8aab075ecbbfed3cd899b434e))
