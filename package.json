@@ -1,6 +1,6 @@
 {
   "name": "release-code",
-  "version": "3.11.2",
+  "version": "0.0.1",
   "description": "Tests for release it",
   "main": "index.js",
   "git": "https://github.com/seitin/release-code",
