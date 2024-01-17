@@ -27,10 +27,13 @@ jobs:
           git config --global user.name "Célula de Ativação"
 
           echo "creating commit for package.json..."
+          LAST_VERSION=$(git tag | tail)
+
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
 
-          npm run release:changelog | tail -n +5 > .last_changelog
+          git log --format="%s" HEAD...$(git rev-list -n 1 $LAST_VERSION) >> .last_changelog
+          # npm run release:changelog | tail -n +5 > .last_changelog
           cat .last_changelog > .changelog
           echo $(cat .last_changelog)
 
