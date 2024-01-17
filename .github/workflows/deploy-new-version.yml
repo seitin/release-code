@@ -27,6 +27,7 @@ jobs:
           git config --global user.name "Célula de Ativação"
 
           echo "creating commit for package.json..."
+          LAST_VERSION=$(git tag | tail)
 
           VERSION=$(npm run release:version | tail -n 1)
           echo "version=$VERSION" >> $GITHUB_ENV
