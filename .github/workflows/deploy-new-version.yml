@@ -31,6 +31,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_ENV
 
           npm run release:changelog | tail -n +5 > .last_changelog
+
           cat .last_changelog > .changelog
           echo $(cat .last_changelog)
 
