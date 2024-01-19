@@ -1,3 +1,14 @@
+## [0.1.4](https://github.com/seitin/release-code/compare/0.1.3...0.1.4) (2024-01-19)
+
+
+### ⚙️ Continuous Integration
+
+* change release branch name ([1186c95](https://github.com/seitin/release-code/commit/1186c954dfdfa93864bbbbf8a5740ab86b635eda))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.3 ([8a00087](https://github.com/seitin/release-code/commit/8a000875d9399889a5d4255d028682d92ece68ff))
 ## [0.1.3](https://github.com/seitin/release-code/compare/0.1.2...0.1.3) (2024-01-19)
 
 
