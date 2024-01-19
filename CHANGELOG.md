@@ -1,3 +1,14 @@
+## [0.1.1](https://github.com/seitin/release-code/compare/0.1.0...0.1.1) (2024-01-19)
+
+
+### ⚙️ Continuous Integration
+
+* change fixed user to requester on gh action workflow ([f5f3a88](https://github.com/seitin/release-code/commit/f5f3a880b0b364f9acf881b8e9ed82ae7d7be86b))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.0 ([de78b75](https://github.com/seitin/release-code/commit/de78b758fbacf84c62d67920994088fdfe2077ef))
 ## [0.1.0](https://github.com/seitin/release-code/compare/0.0.5...0.1.0) (2024-01-17)
 
 
