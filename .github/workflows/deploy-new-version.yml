@@ -72,7 +72,7 @@ jobs:
               owner,
               repo,
               head: 'bump/${{ env.version }}',
-              base: 'release',
+              base: 'releases',
               body: [
                 'Pull request created automatically for versioning',
               ].join('\n')
