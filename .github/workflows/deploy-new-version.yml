@@ -23,8 +23,8 @@ jobs:
       - name: generate version number and changelog file
         run: |
           git config --global --add safe.directory /__w/${{ github.event.repository.name }}/${{ github.event.repository.name }}
-          git config --global user.email "flavia.taho@grupoboticario.com.br"
-          git config --global user.name "Célula de Ativação"
+          git config --global user.email "${GITHUB_ACTOR}"
+          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 
           echo "creating commit for package.json..."
           VERSION=$(npm run release:version | tail -n 1)
