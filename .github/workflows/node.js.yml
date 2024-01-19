@@ -24,7 +24,7 @@ jobs:
   ci:
     name: CI - Build and Test
     runs-on: ubuntu-latest
-    if: ${{ (github.event_name == 'create' && contains(github.ref, 'refs/heads/releases')) || github.event_name != 'create'  }}
+    if: ${{ (github.event_name == 'create' && contains(github.ref, 'refs/heads/releases/')) || github.event_name != 'create'  }}
     steps:
       - uses: actions/checkout@v3
       - name: "Test and build"
@@ -60,7 +60,7 @@ jobs:
         run: echo "Deploying App"
   cd_prd:
     name: CD - PRD
-    if: ${{ success() && contains(github.ref, 'refs/heads/releases') }}
+    if: ${{ success() && contains(github.ref, 'refs/heads/releases/') }}
     needs: [ci_docker]
     runs-on: ubuntu-latest
     steps:
