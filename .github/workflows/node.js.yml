@@ -1,4 +1,8 @@
-on:
+on: 
+  workflow_run:
+    workflows: ["Create pull requests to release and main branches"]
+    types:
+      - completed
   push:
     branches:
       - main
