@@ -1,3 +1,14 @@
+## [0.1.5](https://github.com/seitin/release-code/compare/0.1.4...0.1.5) (2024-01-29)
+
+
+### ⚙️ Continuous Integration
+
+* add consecutive trigger ([cefe287](https://github.com/seitin/release-code/commit/cefe287e74227d991b243e0d6fdc24ec141e8786))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.4 ([d728feb](https://github.com/seitin/release-code/commit/d728feb8db625d69106770d7a8340165064badb3))
 ## [0.1.4](https://github.com/seitin/release-code/compare/0.1.3...0.1.4) (2024-01-19)
 
 
