@@ -55,18 +55,28 @@ jobs:
           git commit -m "chore: Bump version ${{ env.version }}"
           git push
 
-      - name: create release pull request to release branch
-        uses: actions/github-script@v6
+      - name: create release pull request to main branch
+        uses: peter-evans/create-pull-request@v5
         with:
-          script: |
-            const { repo, owner } = context.repo;
-            const result = await github.rest.pulls.create({
-              title: 'Bump version to release [${{ env.version }}]',
-              owner,
-              repo,
-              head: 'release',
-              base: 'main',
-              body: [
-                'Pull request created automatically for versioning',
-              ].join('\n')
-            });
+          title: "Bump version to release [${{ env.version }}]"
+          body: "Pull request created automatically for versioning"
+          branch: main
+          base: release
+          add-paths: |
+            package.json
+            docs/CHANGELOG.md
+      # - name: create release pull request to release branch
+      #   uses: actions/github-script@v6
+      #   with:
+      #     script: |
+      #       const { repo, owner } = context.repo;
+      #       const result = await github.rest.pulls.create({
+      #         title: 'Bump version to release [${{ env.version }}]',
+      #         owner,
+      #         repo,
+      #         head: 'release',
+      #         base: 'main',
+      #         body: [
+      #           'Pull request created automatically for versioning',
+      #         ].join('\n')
+      #       });
