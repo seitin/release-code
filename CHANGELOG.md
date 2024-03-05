@@ -1,3 +1,32 @@
+## [0.1.4](https://github.com/seitin/release-code/compare/0.1.3...0.1.4) (2024-03-05)
+
+
+### 🐛 Bugfixes
+
+* new fix ([db1854f](https://github.com/seitin/release-code/commit/db1854f7ff9dab15b00caf66b47eebe6798d86e2))
+
+
+### ⚙️ Continuous Integration
+
+* add consecutive trigger ([f229c69](https://github.com/seitin/release-code/commit/f229c69ec2ad473d59ee0b2c53eef4ebeb41284f))
+* add consecutive trigger ([dd541a2](https://github.com/seitin/release-code/commit/dd541a2a9431a0cfb6af03c58da346ab34d447e7))
+* add consecutive trigger ([636e414](https://github.com/seitin/release-code/commit/636e4144dee8e0dc72b13267523423a5ff54cfaf))
+* add consecutive trigger ([cefe287](https://github.com/seitin/release-code/commit/cefe287e74227d991b243e0d6fdc24ec141e8786))
+* change release branch name ([1186c95](https://github.com/seitin/release-code/commit/1186c954dfdfa93864bbbbf8a5740ab86b635eda))
+* change to gitflow ([bedd002](https://github.com/seitin/release-code/commit/bedd002335a29f437d247120cdca14b9ce95faf9))
+* change to gitflow ([052b99c](https://github.com/seitin/release-code/commit/052b99cd1e2450e2b4c682de35b4174ea025c8f8))
+* change to gitflow ([0192b30](https://github.com/seitin/release-code/commit/0192b300d6d669c0b8bb8512efd90cd7801e79f9))
+* change to gitflow ([3d7eeee](https://github.com/seitin/release-code/commit/3d7eeeea6d4b6e3ac91d28323478465234618156))
+* change to gitflow ([99702d1](https://github.com/seitin/release-code/commit/99702d1eea3e051ba1daec56727cee90fe2ac8ce))
+* change to gitflow ([5eb8363](https://github.com/seitin/release-code/commit/5eb83632be78fff25b5fd6965838ef72ca3b4c40))
+* change to gitflow ([113d486](https://github.com/seitin/release-code/commit/113d4863d0977767bf97c4ff840cd8628a99eb20))
+* change to gitflow ([4cddf82](https://github.com/seitin/release-code/commit/4cddf82a03a4856e4cc5d01fbfbfa08297d7fc96))
+* fix release branch name ([8b94bff](https://github.com/seitin/release-code/commit/8b94bfffd0fa4a48765f025456c0f6edb74f22df))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.3 ([8a00087](https://github.com/seitin/release-code/commit/8a000875d9399889a5d4255d028682d92ece68ff))
 ## [0.1.3](https://github.com/seitin/release-code/compare/0.1.2...0.1.3) (2024-01-19)
 
 
