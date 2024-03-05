@@ -1,20 +1,21 @@
-on: 
+on:
   push:
     branches:
+      - development
       - main
       - releases
     paths-ignore:
-      - '**/*.md'
-      - '.scafflater/**'
+      - "**/*.md"
+      - ".scafflater/**"
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
     branches:
+      - development
       - main
       - releases
-      - bump/*
     paths-ignore:
       - "**/*.md"
   create:
@@ -35,13 +36,13 @@ jobs:
     name: CI - Docker
     if: ${{ success() && github.actor != 'dependabot[bot]' }}
     needs: [ci]
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps:
       - name: Docker Build and Push
         run: echo "Push to EKS"
   cd_dev:
     name: CD - DEV
-    if: ${{ success() && github.base_ref == 'main' }}
+    if: ${{ success() && github.base_ref == 'refs/heads/development' }}
     needs: [ci_docker]
     runs-on: ubuntu-latest
     steps:
