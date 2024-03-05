@@ -1,3 +1,15 @@
+## [0.1.9](https://github.com/seitin/release-code/compare/0.1.8...0.1.9) (2024-03-05)
+
+
+### ⚙️ Continuous Integration
+
+* change to gitflow ([4cddf82](https://github.com/seitin/release-code/commit/4cddf82a03a4856e4cc5d01fbfbfa08297d7fc96))
+* fix release branch name ([8b94bff](https://github.com/seitin/release-code/commit/8b94bfffd0fa4a48765f025456c0f6edb74f22df))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.8 ([dcae36f](https://github.com/seitin/release-code/commit/dcae36f8ec7d1cf8c593c5d6c28b216b9ace3cc2))
 ## [0.1.8](https://github.com/seitin/release-code/compare/0.1.7...0.1.8) (2024-01-29)
 
 
