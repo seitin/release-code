@@ -47,6 +47,9 @@ jobs:
           bodyFile: .last_changelog
 
       - name: update package.json version
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
           git add package.json
