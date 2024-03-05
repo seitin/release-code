@@ -1,3 +1,14 @@
+## [0.1.10](https://github.com/seitin/release-code/compare/0.1.9...0.1.10) (2024-03-05)
+
+
+### 🐛 Bugfixes
+
+* new fix ([db1854f](https://github.com/seitin/release-code/commit/db1854f7ff9dab15b00caf66b47eebe6798d86e2))
+
+
+### ♻️ Chore
+
+* Bump version 0.1.9 ([23c53ef](https://github.com/seitin/release-code/commit/23c53ef56b7ca220387b4c4479171a5e3202c031))
 ## [0.1.9](https://github.com/seitin/release-code/compare/0.1.8...0.1.9) (2024-03-05)
 
 
