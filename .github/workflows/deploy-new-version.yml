@@ -55,16 +55,24 @@ jobs:
           git commit -m "chore: Bump version ${{ env.version }}"
           git push
 
-      - name: create release pull request to main branch
-        uses: peter-evans/create-pull-request@v5
+      - name: Run the Action
+        uses: devops-infra/action-pull-request@v0.5.5
         with:
-          title: "Bump version to release [${{ env.version }}]"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: main
+          target_branch: release
+          title: "Publish version [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
-          branch: main
-          base: release
-          add-paths: |
-            package.json
-            docs/CHANGELOG.md
+      # - name: create release pull request to main branch
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Bump version to release [${{ env.version }}]"
+      #     body: "Pull request created automatically for versioning"
+      #     branch: main
+      #     base: release
+      #     add-paths: |
+      #       package.json
+      #       docs/CHANGELOG.md
       # - name: create release pull request to release branch
       #   uses: actions/github-script@v6
       #   with:
