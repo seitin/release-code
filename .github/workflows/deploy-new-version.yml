@@ -1,12 +1,15 @@
 name: Create pull requests to release and main branches
 
-on: 
+on:
   workflow_dispatch:
     inputs:
 
+permissions:
+  contents: write
 
 jobs:
   branching:
+    permissions: write-all
     runs-on: ubuntu-latest
     container:
       image: node:18
@@ -14,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: '0'
+          fetch-depth: "0"
 
       - name: npm install
         run: |
@@ -45,37 +48,45 @@ jobs:
           name: Release ${{ env.version }}
           bodyFile: .last_changelog
 
-      - name: update package.json version 
+      - name: update package.json version
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           git add package.json
           git add CHANGELOG.md
           git commit -m "chore: Bump version ${{ env.version }}"
+          git push
 
-      - name: create release pull request to main branch
-        uses: peter-evans/create-pull-request@v5
+      - name: Run the Action
+        uses: devops-infra/action-pull-request@v0.5.5
         with:
-          title: "Bump version to release [${{ env.version }}]"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: main
+          target_branch: release
+          title: "Publish version [${{ env.version }}]"
           body: "Pull request created automatically for versioning"
-          branch: bump/${{ env.version }}
-          base: main
-          add-paths: |
-            package.json
-            CHANGELOG.md
-
-      - name: create release pull request to release branch 
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const { repo, owner } = context.repo;
-            const result = await github.rest.pulls.create({
-              title: 'Bump version to release [${{ env.version }}]',
-              owner,
-              repo,
-              head: 'bump/${{ env.version }}',
-              base: 'release',
-              body: [
-                'Pull request created automatically for versioning',
-              ].join('\n')
-            });
-
+      # - name: create release pull request to main branch
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Bump version to release [${{ env.version }}]"
+      #     body: "Pull request created automatically for versioning"
+      #     branch: main
+      #     base: release
+      #     add-paths: |
+      #       package.json
+      #       docs/CHANGELOG.md
+      # - name: create release pull request to release branch
+      #   uses: actions/github-script@v6
+      #   with:
+      #     script: |
+      #       const { repo, owner } = context.repo;
+      #       const result = await github.rest.pulls.create({
+      #         title: 'Bump version to release [${{ env.version }}]',
+      #         owner,
+      #         repo,
+      #         head: 'release',
+      #         base: 'main',
+      #         body: [
+      #           'Pull request created automatically for versioning',
+      #         ].join('\n')
+      #       });
