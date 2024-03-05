@@ -50,7 +50,7 @@ jobs:
           git add package.json
           git add CHANGELOG.md
           git commit -m "chore: Bump version ${{ env.version }}"
-          git push
+          git push origin main
 
       - name: create release pull request to release branch
         uses: actions/github-script@v6
