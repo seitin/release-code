@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
     inputs:
 
+permissions:
+  contents: write
+
 jobs:
   branching:
     runs-on: ubuntu-latest
@@ -50,7 +53,7 @@ jobs:
           git add package.json
           git add CHANGELOG.md
           git commit -m "chore: Bump version ${{ env.version }}"
-          git push origin main
+          git push
 
       - name: create release pull request to release branch
         uses: actions/github-script@v6
