@@ -16,7 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT }}
           fetch-depth: "0"
 
       - name: npm install
@@ -51,6 +50,7 @@ jobs:
       - name: update package.json version
         run: |
           node -e "const package = require('./package.json'); package.version = '${{ env.version }}'; require('fs').writeFileSync('package.json', JSON.stringify(package, null, 2))"
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           git add package.json
           git add CHANGELOG.md
           git commit -m "chore: Bump version ${{ env.version }}"
