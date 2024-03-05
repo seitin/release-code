@@ -60,7 +60,7 @@ jobs:
               title: 'Bump version to release [${{ env.version }}]',
               owner,
               repo,
-              head: 'releases',
+              head: 'release',
               base: 'main',
               body: [
                 'Pull request created automatically for versioning',
